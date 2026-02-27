@@ -35,6 +35,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: dist/ai-studio-angular-app/browser/
+          local-dir: dist/My_Professional_Portfolio/browser/
           server-dir: developerkavi/browser/
           dangerous-clean-slate: true
