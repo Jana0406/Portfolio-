@@ -37,4 +37,3 @@ jobs:
           port: 21
           local-dir: dist/app/
           server-dir: /
-          dangerous-clean-slate: true
