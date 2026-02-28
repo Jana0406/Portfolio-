@@ -87,8 +87,8 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
   private typingInterval: ReturnType<typeof setTimeout> | null = null;
   private phrases = [
     "Full Stack Developer",
-    "AI Automation Engineer",
-    "ERP & CRM Architect"
+    "AI Automation",
+    "ERP & CRM , CMS Architect"
   ];
 
   ngAfterViewInit() {
