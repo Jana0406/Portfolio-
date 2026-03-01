@@ -1,17 +1,22 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MatIconModule } from '@angular/material/icon';
 import { ToastService } from './toast.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatIconModule],
-  template: `
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    HttpClientModule
+  ],
+    template: `
     <section id="contact" class="py-24 bg-transparent relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" #contactSection>
         <div class="text-center mb-16 contact-header opacity-0">
@@ -130,10 +135,13 @@ import { ToastService } from './toast.service';
   `
 })
 export class ContactComponent implements AfterViewInit {
+
   @ViewChild('contactSection') contactSectionRef!: ElementRef;
+
   private platformId = inject(PLATFORM_ID);
   private fb = inject(FormBuilder);
   private toastService = inject(ToastService);
+  private http = inject(HttpClient);   // ✅ FIX ADDED
 
   contactForm: FormGroup;
   isSubmitting = false;
@@ -150,57 +158,59 @@ export class ContactComponent implements AfterViewInit {
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       gsap.registerPlugin(ScrollTrigger);
+
       const header = this.contactSectionRef.nativeElement.querySelectorAll('.contact-header');
       const items = this.contactSectionRef.nativeElement.querySelectorAll('.contact-item');
-      
-      gsap.fromTo([...header, ...items], 
+
+      gsap.fromTo(
+        [...header, ...items],
         { opacity: 0, y: 30 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 0.7, 
-          stagger: 0.15, 
-          ease: "power2.out",
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: this.contactSectionRef.nativeElement,
-            start: "top 80%",
+            start: 'top 80%',
           }
         }
       );
     }
   }
 
-onSubmit() {
-  if (this.contactForm.valid) {
-    this.isSubmitting = true;
-    const loadingId = this.toastService.loading('Sending message...');
+  onSubmit() {
+    if (this.contactForm.valid) {
+      this.isSubmitting = true;
+      const loadingId = this.toastService.loading('Sending message...');
 
-    this.http.post<any>(
-      'https://portkaviapi.techtigers.in/api/contact',
-      this.contactForm.value
-    ).subscribe({
-      next: (response) => {
-        this.isSubmitting = false;
-        this.toastService.dismiss(loadingId);
+      this.http.post<{ success: boolean }>(
+        'https://portkaviapi.techtigers.in/api/contact',
+        this.contactForm.value
+      ).subscribe({
+        next: (response) => {
+          this.isSubmitting = false;
+          this.toastService.dismiss(loadingId);
 
-        if (response?.success) {
-          this.toastService.success('Message sent successfully!');
-          this.contactForm.reset();
-        } else {
-          this.toastService.error('Failed to send message.');
+          if (response.success) {
+            this.toastService.success('Message sent successfully!');
+            this.contactForm.reset();
+          } else {
+            this.toastService.error('Failed to send message.');
+          }
+        },
+        error: (error: unknown) => {
+          this.isSubmitting = false;
+          this.toastService.dismiss(loadingId);
+          console.error('API Error:', error);
+          this.toastService.error('Server error. Please try again.');
         }
-      },
-      error: (error) => {
-        this.isSubmitting = false;
-        this.toastService.dismiss(loadingId);
-        console.error('API Error:', error);
-        this.toastService.error('Server error. Please try again.');
-      }
-    });
+      });
 
-  } else {
-    this.contactForm.markAllAsTouched();
-    this.toastService.error('Please fill in all required fields correctly.');
+    } else {
+      this.contactForm.markAllAsTouched();
+      this.toastService.error('Please fill in all required fields correctly.');
+    }
   }
-}
 }
