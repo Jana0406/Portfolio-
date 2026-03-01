@@ -20,7 +20,7 @@ import { ThemeService } from './theme.service';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex-shrink-0 cursor-pointer group" (click)="scrollTo('home')" (keydown.enter)="scrollTo('home')" tabindex="0">
-            <span class="font-display font-bold text-2xl tracking-tight text-primary-green inline-block transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-2">Dev_Jana</span>
+            <span class="font-display font-bold text-2xl tracking-tight text-primary-green inline-block transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-2">Dev_Janas</span>
           </div>
           
           <div class="hidden md:block">
