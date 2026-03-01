@@ -40,7 +40,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
                   </div>
                   <div>
                     <h4 class="text-sm font-medium text-slate-500 dark:text-slate-400">Email</h4>
-                    <a href="mailto:mkaviyarasan003@gmail.com" class="text-lg font-medium text-slate-900 dark:text-white hover:text-primary-green transition-colors">mkaviyarasan003&#64;gmail.com</a>
+                    <a href="mailto:mrjana2003@gmail.com" class="text-lg font-medium text-slate-900 dark:text-white hover:text-primary-green transition-colors">mrjana2003&#64;gmail.com</a>
                   </div>
                 </div>
 

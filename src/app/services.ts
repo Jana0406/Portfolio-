@@ -58,7 +58,7 @@ export class ServicesComponent implements AfterViewInit {
 
   services: Service[] = [
     {
-      title: 'Full Stack Web Development',
+      title: 'Backend Web Development',
       description: 'Building responsive, high-performance web applications using modern frameworks like React and Angular, backed by robust Node.js or PHP architectures.',
       icon: 'web'
     },

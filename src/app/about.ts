@@ -24,7 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
           <div class="about-item opacity-0">
             <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
               <div class="absolute inset-0 bg-gradient-to-tr from-primary-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Kaviyarasan M" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Janarthanan M" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
               
               <!-- Floating badge -->
               <div class="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/20 dark:border-slate-700/50 z-20 flex items-center gap-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -45,7 +45,7 @@ import { MatIconModule } from '@angular/material/icon';
             </h3>
             
             <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed about-item opacity-0">
-              I am a passionate Full Stack Developer and AI Automation Engineer with over 5 years of experience building scalable enterprise solutions. My expertise lies in architecting robust CRM and ERP systems that drive business efficiency.
+              I am a passionate Backend Developer and AI Automation Engineer with over 5 years of experience building scalable enterprise solutions. My expertise lies in architecting robust CRM and ERP systems that drive business efficiency.
             </p>
             
             <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed about-item opacity-0">
@@ -56,7 +56,7 @@ import { MatIconModule } from '@angular/material/icon';
               <div class="flex items-start gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
                 <mat-icon class="text-primary-green mt-0.5">code</mat-icon>
                 <div>
-                  <h4 class="font-semibold text-slate-900 dark:text-white">Full Stack Dev</h4>
+                  <h4 class="font-semibold text-slate-900 dark:text-white">Backend Dev</h4>
                   <p class="text-sm text-slate-500 dark:text-slate-400">React, Angular, Node.js</p>
                 </div>
               </div>
@@ -99,14 +99,14 @@ export class AboutComponent implements AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       gsap.registerPlugin(ScrollTrigger);
       const items = this.aboutSectionRef.nativeElement.querySelectorAll('.about-item');
-      
-      gsap.fromTo(items, 
+
+      gsap.fromTo(items,
         { opacity: 0, y: 30 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 0.8, 
-          stagger: 0.15, 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
           ease: "power2.out",
           scrollTrigger: {
             trigger: this.aboutSectionRef.nativeElement,
