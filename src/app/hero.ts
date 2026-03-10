@@ -6,7 +6,25 @@ import { gsap } from 'gsap';
   selector: 'app-hero',
   standalone: true,
   template: `
-    <section id="home" class="relative min-h-screen flex items-center pt-20">
+    <section id="home"
+      itemscope
+      itemtype="https://schema.org/Person"
+      aria-label="Janarthanan M – Backend Developer Portfolio"
+      class="relative min-h-screen flex items-center pt-20">
+
+      <!-- SEO: Hidden keyword-rich text for search engine crawlers -->
+      <span class="sr-only">
+        Janarthanan M, also known as Jana or Dev Jana, is an experienced Backend Developer and PHP Developer based in India.
+        Jana specializes in JavaScript development, Laravel, Angular, Node.js, MySQL, AI Automation, and enterprise ERP &amp; CRM systems.
+        Jana developer portfolio – backend developer, php developer, js developer, javascript developer.
+      </span>
+      <meta itemprop="name" content="Janarthanan M" />
+      <meta itemprop="alternateName" content="Jana" />
+      <meta itemprop="jobTitle" content="Backend Developer" />
+      <meta itemprop="email" content="mrjana2003@gmail.com" />
+      <link itemprop="url" href="https://janadev.in/" />
+      <link itemprop="sameAs" href="https://github.com/jana0406" />
+      <link itemprop="sameAs" href="https://www.linkedin.com/in/janarthanan0406/" />
       <!-- Background Animated SVG Lines -->
       <div class="absolute inset-0 z-0 opacity-20 dark:opacity-10 pointer-events-none">
         <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">

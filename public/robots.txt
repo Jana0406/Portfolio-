@@ -1,0 +1,7 @@
+# robots.txt – Janarthanan M Portfolio (janadev.in)
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://janadev.in/sitemap.xml

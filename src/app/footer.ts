@@ -41,6 +41,17 @@ import { CommonModule } from '@angular/common';
             <a href="#" class="hover:text-primary-green transition-colors">Terms of Service</a>
           </div>
         </div>
+
+        <!-- SEO: Machine-readable contact / identity info (visually hidden) -->
+        <address class="sr-only" itemscope itemtype="https://schema.org/Person">
+          <span itemprop="name">Janarthanan M</span> –
+          <span itemprop="alternateName">Jana</span>,
+          <span itemprop="jobTitle">Backend Developer</span>,
+          PHP Developer, JavaScript Developer, Laravel Developer, Angular Developer, Node.js Developer.
+          Contact: <a itemprop="email" href="mailto:mrjana2003@gmail.com">mrjana2003@gmail.com</a>.
+          GitHub: <a itemprop="sameAs" href="https://github.com/jana0406">github.com/jana0406</a>.
+          LinkedIn: <a itemprop="sameAs" href="https://www.linkedin.com/in/janarthanan0406/">linkedin.com/in/janarthanan0406</a>.
+        </address>
       </div>
     </footer>
   `
