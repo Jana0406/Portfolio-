@@ -14,9 +14,11 @@ import { gsap } from 'gsap';
 
       <!-- SEO: Hidden keyword-rich text for search engine crawlers -->
       <span class="sr-only">
-        Janarthanan M, also known as Jana or Dev Jana, is an experienced Backend Developer and PHP Developer based in India.
-        Jana specializes in JavaScript development, Laravel, Angular, Node.js, MySQL, AI Automation, and enterprise ERP &amp; CRM systems.
-        Jana developer portfolio – backend developer, php developer, js developer, javascript developer.
+        Janarthanan M, also known as Jana or Dev Jana, is a Full Stack Laravel PHP Developer and Backend Developer based in India.
+        Jana (Janarthanan M) specializes in PHP web development, Laravel full-stack development, Laravel API development,
+        JavaScript development, Angular, React, Node.js, Next.js, MySQL, PostgreSQL, AI Automation, and enterprise ERP &amp; CRM systems.
+        Keywords: jana developer, backend developer, php developer, full stack php developer, full stack laravel developer,
+        laravel developer, laravel web development, js developer, javascript developer, backend developer india, freelance php developer.
       </span>
       <meta itemprop="name" content="Janarthanan M" />
       <meta itemprop="alternateName" content="Jana" />

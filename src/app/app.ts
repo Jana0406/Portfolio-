@@ -10,6 +10,7 @@ import { ContactComponent } from './contact';
 import { FooterComponent } from './footer';
 import { ThemeService } from './theme.service';
 import { ToastContainerComponent } from './toast.component';
+import { SeoService } from './seo.service';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -223,11 +224,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 })
 export class App implements OnInit, AfterViewInit {
   @ViewChild('orbitCircle') orbitCircleRef!: ElementRef;
-  
+
   private themeService = inject(ThemeService);
-  private platformId = inject(PLATFORM_ID);
+  private platformId   = inject(PLATFORM_ID);
+  private seoService   = inject(SeoService);
 
   ngOnInit() {
+    // ── Dynamic SEO: applies meta tags, OG, Twitter Card, JSON-LD on every render ──
+    this.seoService.applyPortfolioDefaults();
+
     if (isPlatformBrowser(this.platformId)) {
       this.themeService.isDarkMode();
     }
