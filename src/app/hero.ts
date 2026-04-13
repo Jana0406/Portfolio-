@@ -46,7 +46,7 @@ import { gsap } from 'gsap';
           <div class="text-left" #heroContent>
             <div class="hero-item inline-flex items-center px-4 py-2 rounded-full bg-primary-green/10 text-primary-green text-sm font-medium mb-8 border border-primary-green/20 backdrop-blur-sm">
               <span class="w-2 h-2 rounded-full bg-primary-green mr-2 animate-pulse"></span>
-              Available for new opportunities
+              Available for new opportunitiess
             </div>
             
             <h1 class="hero-item text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 text-slate-900 dark:text-white leading-tight">
